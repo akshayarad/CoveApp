@@ -1,5 +1,5 @@
-import { StyleSheet, Pressable, Text} from 'react-native'
-import React from 'react'
+import { Keyboard, StyleSheet, Text, TextInput, TouchableWithoutFeedback} from 'react-native'
+import React, { useState } from 'react'
 import { Link } from 'expo-router'
 import { Colors } from "../../constants/Colors"
 
@@ -10,17 +10,44 @@ import ThemedView from '../../components/ThemedView'
 import Spacer from '../../components/Spacer'
 import ThemedText from '../../components/ThemedText'
 import ThemedButton from '../../components/ThemedButton'
+import ThemedTextInput from '../../components/ThemedTextInput'
 
 const Login = () => {
+  const[email, setEmail] = useState('')
+  // set email updates that value to be the email so u call set email func
+  const[password, setPassword] = useState('')
+
     const handleSubmit = () => {
-      console.log('login form submitted')
+      console.log('login form submitted', email, password)
     }
   return (
+    //touchablewofeedback means u can click anywhere on screen to exit keyboard
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
     <ThemedView style={styles.container}>
       <Spacer/>
       <ThemedText title={true} style={styles.title}>
         LOG IN
         </ThemedText>
+
+        <ThemedTextInput 
+        style ={{width: '80%', marginBottom:20}}
+        placeholder= "Email" 
+        keyboardType="email-address" // puts the @ symbol on the keyboard omg so cool
+        onChangeText={setEmail}
+        value={email}
+      />
+
+        <ThemedTextInput 
+        style ={{width: '80%', marginBottom:20}}
+        placeholder= "Password" 
+        onChangeText={setPassword}
+        value={password}
+        secureTextEntry // makes the characters dots ahhh cute
+      />
+
+        
+        <Spacer/>
+
 
         <ThemedButton onPress={handleSubmit}>
         <Text style={{color: '#274472' }}>
@@ -32,11 +59,11 @@ const Login = () => {
         <Spacer height={100} />
         <Link href= '/register'>
         <ThemedText style={{textAlign:'center'}}>
-          Dont have an account? Register 
+          Dont have an account? Register here :)
         </ThemedText>
         </Link>
     </ThemedView>
-
+    </TouchableWithoutFeedback>
   )
 }
 

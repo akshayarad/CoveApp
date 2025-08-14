@@ -45,17 +45,14 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'center'
+        paddingTop: 40
     },
     title: {
         fontWeight: 'bold',
-        fontSize: 18
+        fontSize: 18,
     },
     img: {
-        marginBottom: 20,
-        marginTop: 20,
-        position: 'relative',
-        top: -160, 
+        marginBottom: 8,  
  },
     link: {
         marginVertical: 10,

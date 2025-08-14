@@ -3,6 +3,7 @@ import React from 'react'
 import { Stack } from 'expo-router'
 import { Colors } from "../constants/Colors"
 import { StatusBar } from 'expo-status-bar'
+import { UserProvider } from '../contexts/UserContext'
 
 const RootLayout = () => {
     const colorScheme = useColorScheme()
