@@ -20,7 +20,7 @@ const Register = () => {
 
   
     const handleSubmit = () => {
-        console.log('register form submitted',email,password)
+        console.log('register form submitted',name,email,password)
       }
   return (
     //touchablewofeedback means u can click anywhere on screen to exit keyboard
