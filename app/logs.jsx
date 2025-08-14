@@ -1,14 +1,20 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet} from 'react-native'
 import React from 'react'
 import { Link } from 'expo-router'
 
+import ThemedView from '../components/ThemedView'
+import Spacer from '../components/Spacer'
+import ThemedText from '../components/ThemedText'
+
 const Logs = () => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Your Logs</Text>
+    <ThemedView style={styles.container}>
+    <ThemedText style={styles.title}>Your Logs</ThemedText>
 
-      <Link href="/" style= {styles.link}> Back Home</Link>
-    </View>
+    <Link href="/" style= {styles.link}>
+    <ThemedText> Back Home </ThemedText>
+    </Link>
+  </ThemedView>
   )
 }
 

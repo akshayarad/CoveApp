@@ -1,7 +1,9 @@
 import { StyleSheet, Text } from 'react-native'
-import LightCove from '../assets/img/LightCove.png'
 import { Link } from 'expo-router'
 import React from 'react'
+
+import { useFonts, M_PLUS_Rounded_1c_400Regular, M_PLUS_Rounded_1c_700Bold } from '@expo-google-fonts/m-plus-rounded-1c'
+
 
 
 //themed components
@@ -15,7 +17,6 @@ const Home = () => {
   return (
     <ThemedView style={styles.container}>
         <ThemedCove style={styles.img}/>
-        <Spacer height={10} />
 
       <ThemedText style={styles.title} title={true}>
         Your Safe Space
@@ -25,11 +26,14 @@ const Home = () => {
       <ThemedText> Venting App </ThemedText>
       <Spacer />
 
-    <Link href = "/resources" style={styles.link}> 
-    <ThemedText>Resources</ThemedText>
+    <Link href = "/login" style={styles.link}> 
+    <ThemedText>Login!</ThemedText>
     </Link>
-    <Link href = "/resources" style={styles.link}> 
-    <ThemedText>Logs</ThemedText>
+    <Link href = "/register" style={styles.link}> 
+    <ThemedText>Register!</ThemedText>
+    </Link>
+    <Link href = "/chat" style={styles.link}> 
+    <ThemedText>chat</ThemedText>
     </Link>
     </ThemedView>
   )
@@ -49,8 +53,9 @@ const styles = StyleSheet.create({
     },
     img: {
         marginBottom: 20,
+        marginTop: 20,
         position: 'relative',
-        top: -160, // adjust this until it looks right
+        top: -160, 
  },
     link: {
         marginVertical: 10,
