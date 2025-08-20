@@ -21,6 +21,19 @@ const DashboardLayout = () => {
       tabBarInactiveTintColor: theme.iconColor,
     }}
   >
+
+
+<Tabs.Screen name="profile" 
+    options={{title:'Profile', tabBarIcon:({ focused }) => (
+        <Ionicons
+        size = {30}
+        name= "person"
+        color={focused ? theme.iconColorFocused :
+        theme.iconColor}
+    />
+   )}} 
+    />
+    
     <Tabs.Screen 
     name="chat" 
     options={{title:'Chat', tabBarIcon: ({focused}) => (
@@ -32,6 +45,8 @@ const DashboardLayout = () => {
         /> )}}
      
     />
+
+
      <Tabs.Screen name="moodChart" 
     options={{title:'Mood Chart', tabBarIcon:({ focused }) => (
         <Ionicons
@@ -41,6 +56,8 @@ const DashboardLayout = () => {
         theme.iconColor}
     />   ) }} 
     />
+
+
      <Tabs.Screen name="yourResources" 
     options={{title:'Resources', tabBarIcon:({ focused }) => (
         <Ionicons
@@ -51,16 +68,11 @@ const DashboardLayout = () => {
     />
    )}} 
     />
-     <Tabs.Screen name="profile" 
-    options={{title:'Profile', tabBarIcon:({ focused }) => (
-        <Ionicons
-        size = {30}
-        name= "person"
-        color={focused ? theme.iconColorFocused :
-        theme.iconColor}
-    />
-   )}} 
-    />
+
+
+     
+
+
     </Tabs>
   )
 }

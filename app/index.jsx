@@ -32,8 +32,8 @@ const Home = () => {
     <Link href = "/register" style={styles.link}> 
     <ThemedText>Register!</ThemedText>
     </Link>
-    <Link href = "/chat" style={styles.link}> 
-    <ThemedText>chat</ThemedText>
+    <Link href = "/profile" style={styles.link}> 
+    <ThemedText>profile</ThemedText>
     </Link>
     </ThemedView>
   )

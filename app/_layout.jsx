@@ -6,38 +6,35 @@ import { StatusBar } from 'expo-status-bar'
 import { UserProvider } from '../contexts/UserContext'
 
 // font stuff
-import { Slot } from 'expo-router'
 import * as SplashScreen from 'expo-splash-screen'
 import { useEffect } from "react"
 import {TextInput } from "react-native"
-import { useFonts, M_PLUS_Rounded_1c_400Regular } from "@expo-google-fonts/m-plus-rounded-1c"
+import { useFonts,
+  MPLUSRounded1c_400Regular,
+  MPLUSRounded1c_500Medium,
+  MPLUSRounded1c_700Bold
+} from '@expo-google-fonts/m-plus-rounded-1c';
 //font stuff
 SplashScreen.preventAutoHideAsync();
 
 const RootLayout = () => {
     const colorScheme = useColorScheme()
     const theme = Colors [colorScheme] ?? Colors.dark
-
     // font stuff
     const [fontsLoaded] = useFonts({
-      M_PLUS_Rounded_1c_400Regular,
-    })
+      MPLUSRounded1c_400Regular,
+      MPLUSRounded1c_500Medium,
+      MPLUSRounded1c_700Bold,
+    });
     
     useEffect(() => {
       if (!fontsLoaded) return;
-  
+    
       if (Text.defaultProps == null) Text.defaultProps = {};
       if (TextInput.defaultProps == null) TextInput.defaultProps = {};
-  
-      Text.defaultProps.style = [
-        { fontFamily: 'M_PLUS_Rounded_1c_400Regular' },
-        Text.defaultProps.style,
-      ];
-      TextInput.defaultProps.style = [
-        { fontFamily: 'M_PLUS_Rounded_1c_400Regular' },
-        TextInput.defaultProps.style,
-      ];
-  
+    
+      Text.defaultProps.style = [{ fontFamily: 'MPLUSRounded1c_400Regular' }, Text.defaultProps.style];
+      TextInput.defaultProps.style = [{ fontFamily: 'MPLUSRounded1c_400Regular' }, TextInput.defaultProps.style];
       SplashScreen.hideAsync();
     }, [fontsLoaded]);
   
@@ -46,7 +43,6 @@ const RootLayout = () => {
 
  return (
     <UserProvider>
-      <Slot /> 
     <StatusBar value="auto" />
      <Stack screenOptions= {{
         headerStyle: {backgroundColor: theme.navBackground},
