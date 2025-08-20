@@ -8,16 +8,19 @@ const DashboardLayout = () => {
     const colorScheme = useColorScheme ()
     const theme = Colors[colorScheme] ?? Colors.dark
   return (
-   <Tabs
-   screenOptions={{headerShown:false, tabBarStyle:{
-    backgroundColor: theme.navBackground,
-    paddingTop: 10,
-    height: 90
-   },
-   tabBarActiveTintColor: theme.iconColorFocused,
-   tabBarInactiveTintColor: theme.iconColor
- }}
-   >
+    <Tabs
+    screenOptions={{
+      headerShown: false,
+      tabBarShowLabel: false,  // hides labels
+      tabBarStyle: {
+        backgroundColor: theme.navBackground,
+        paddingTop: 10,
+        height: 90,
+      },
+      tabBarActiveTintColor: theme.iconColorFocused,
+      tabBarInactiveTintColor: theme.iconColor,
+    }}
+  >
     <Tabs.Screen 
     name="chat" 
     options={{title:'Chat', tabBarIcon: ({focused}) => (

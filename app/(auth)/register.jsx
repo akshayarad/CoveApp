@@ -11,17 +11,26 @@ import Spacer from '../../components/Spacer'
 import ThemedText from '../../components/ThemedText'
 import ThemedButton from '../../components/ThemedButton'
 import ThemedTextInput from '../../components/ThemedTextInput'
+import { useUser } from '../../hooks/useUser'
 
 const Register = () => {
+  const[name, setName] = useState('')
   const[email, setEmail] = useState('')
     // set email updates that value to be the email so u call set email func
   const[password, setPassword] = useState('')
-  const[name, setName] = useState('')
+
+  const {register} = useUser ()
+
 
   
-    const handleSubmit = () => {
-        console.log('register form submitted',name,email,password)
-      }
+  const handleSubmit = async () => {
+    try {
+      await register(name, email, password)
+    } catch (error) {
+    }
+  }
+
+
   return (
     //touchablewofeedback means u can click anywhere on screen to exit keyboard
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
