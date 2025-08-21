@@ -23,18 +23,16 @@ const Home = () => {
         </ThemedText>
 
         <Spacer height= {10} />
-      <ThemedText> Venting App </ThemedText>
-      <Spacer />
+      <ThemedText> Vent about anything and everything  </ThemedText>
+      <Spacer height={120} />
 
-    <Link href = "/login" style={styles.link}> 
-    <ThemedText>Login!</ThemedText>
+   <Link href = "/profile" style={styles.link}> 
+    <ThemedText style={styles.title}>Click here to get started :) </ThemedText>
     </Link>
-    <Link href = "/register" style={styles.link}> 
-    <ThemedText>Register!</ThemedText>
-    </Link>
-    <Link href = "/profile" style={styles.link}> 
-    <ThemedText>profile</ThemedText>
-    </Link>
+
+  
+   
+  
     </ThemedView>
   )
 }
@@ -56,6 +54,5 @@ const styles = StyleSheet.create({
  },
     link: {
         marginVertical: 10,
-        borderBottomWidth: 1
     }
 })

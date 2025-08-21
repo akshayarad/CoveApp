@@ -1,6 +1,6 @@
 import { Keyboard, StyleSheet, Text, TextInput, TouchableWithoutFeedback} from 'react-native'
 import React, { useState } from 'react'
-import { Link } from 'expo-router'
+import { Link, useRouter } from 'expo-router'
 import { Colors } from "../../constants/Colors"
 
 
@@ -14,6 +14,7 @@ import ThemedTextInput from '../../components/ThemedTextInput'
 import { useUser } from '../../hooks/useUser'
 
 const Register = () => {
+  const router = useRouter()
   const[name, setName] = useState('')
   const[email, setEmail] = useState('')
     // set email updates that value to be the email so u call set email func
@@ -29,6 +30,7 @@ const Register = () => {
     setError(null)
     try {
       await register(name, email, password)
+      router.replace('/profile')
     } catch (error) {
       setError(error.message)
     }

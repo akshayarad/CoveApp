@@ -11,6 +11,8 @@ const Profile = () => {
   const {logout, user} = useUser()
   return (
     <ThemedView style={styles.container}>
+      <Spacer height={100} />
+
 
       <ThemedText title={true} style={styles.heading}>
        Hi {user.name}!
@@ -19,7 +21,9 @@ const Profile = () => {
 
       <ThemedText>Your Email: {user.email}</ThemedText>
 
-      <Spacer />
+      <Spacer height={280} />
+      
+
 
       <ThemedButton onPress={logout}>
         <Text style= {{color: '#274472'}}> 

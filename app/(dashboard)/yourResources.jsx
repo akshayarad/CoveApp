@@ -1,12 +1,15 @@
 import { StyleSheet } from 'react-native'
-import { Link } from 'expo-router'
+import { Link, router } from 'expo-router'
+import { useRouter } from 'expo-router'
 
 import Spacer from "../../components/Spacer"
 import ThemedText from "../../components/ThemedText"
 import ThemedView from "../../components/ThemedView"
+import ThemedButton from '../../components/ThemedButton'
 
 
 const YourResources = () => {
+  const router = useRouter()
   return (
     <ThemedView style={styles.container}>
 
@@ -15,10 +18,7 @@ const YourResources = () => {
         Resources!
       </ThemedText>
 
-      <Link href = "/logs" style={styles.link}> 
-    <ThemedText>Your Logs!</ThemedText>
-    </Link>
-
+     
     </ThemedView>
   )
 }

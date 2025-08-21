@@ -4,6 +4,8 @@ import { Stack } from 'expo-router'
 import { Colors } from "../constants/Colors"
 import { StatusBar } from 'expo-status-bar'
 import { UserProvider } from '../contexts/UserContext'
+import { LogsProvider } from '../contexts/LogsContext'
+
 
 // font stuff
 import * as SplashScreen from 'expo-splash-screen'
@@ -43,6 +45,7 @@ const RootLayout = () => {
 
  return (
     <UserProvider>
+      <LogsProvider>
     <StatusBar value="auto" />
      <Stack screenOptions= {{
         headerStyle: {backgroundColor: theme.navBackground},
@@ -53,6 +56,7 @@ const RootLayout = () => {
         <Stack.Screen name="index" options={{title: 'Home'}} />
         <Stack.Screen name="logs" options={{title: 'Your Logs'}} />
      </Stack>
+     </LogsProvider>
      </UserProvider>
   
   )

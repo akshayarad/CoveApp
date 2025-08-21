@@ -1,6 +1,6 @@
-import { Keyboard, StyleSheet, Text, TextInput, TouchableWithoutFeedback} from 'react-native'
+import { Keyboard, StyleSheet, Text, TouchableWithoutFeedback} from 'react-native'
 import React, { useState } from 'react'
-import { Link } from 'expo-router'
+import { Link, useRouter } from 'expo-router'
 import { Colors } from "../../constants/Colors"
 import { useUser } from '../../hooks/useUser'
 
@@ -14,7 +14,9 @@ import ThemedText from '../../components/ThemedText'
 import ThemedButton from '../../components/ThemedButton'
 import ThemedTextInput from '../../components/ThemedTextInput'
 
+
 const Login = () => {
+  const router = useRouter()
   const[email, setEmail] = useState('')
   // set email updates that value to be the email so u call set email func
   const[password, setPassword] = useState('')
@@ -25,6 +27,7 @@ const Login = () => {
       setError(null)
       try {
         await login(email, password)
+        router.replace('/profile')
       } catch (error) {  
         setError(error.message) 
       }
@@ -75,7 +78,9 @@ const Login = () => {
           Dont have an account? Register here :)
         </ThemedText>
         </Link>
+
     </ThemedView>
+
     </TouchableWithoutFeedback>
   )
 }
