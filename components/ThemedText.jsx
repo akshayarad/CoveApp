@@ -1,4 +1,4 @@
-import { Text, useColorScheme } from 'react-native'
+import { Text, useColorScheme, StyleSheet } from 'react-native'
 import { Colors } from '../constants/Colors'
 
 const ThemedText = ({ style, title = false, ...props }) => {
@@ -9,10 +9,21 @@ const ThemedText = ({ style, title = false, ...props }) => {
 
   return (
     <Text 
-      style={[{ color: textColor }, style]}
+      style={[
+        styles.text,
+        { color: textColor },
+        title && styles.title,
+        style
+      ]}
       {...props}
     />
   )
 }
+
+const styles = StyleSheet.create({
+  text: {
+    fontFamily: 'MPLUSRounded1c_400Regular',
+  },
+})
 
 export default ThemedText

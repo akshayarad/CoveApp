@@ -2,8 +2,6 @@ import { StyleSheet, Text } from 'react-native'
 import { Link } from 'expo-router'
 import React from 'react'
 
-import { useFonts, M_PLUS_Rounded_1c_400Regular, M_PLUS_Rounded_1c_700Bold } from '@expo-google-fonts/m-plus-rounded-1c'
-
 
 
 //themed components

@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { LogsContext } from "../contexts/LogsContext";
 
 export function useLogs() {
-    // grabs all values that user context provider gives(user, login, register,logout)
+    // grabs all values that logs context provider gives
     const context = useContext(LogsContext)
 
     if(!context) {

@@ -63,9 +63,9 @@ const Login = () => {
 
 
         <ThemedButton onPress={handleSubmit}>
-        <Text style={{color: '#274472' }}>
+        <ThemedText style={{color: '#274472' }}>
             Log in!
-          </Text>
+          </ThemedText>
         </ThemedButton>
 
         <Spacer/>
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
   },
   title: {
     textAlign: "center",
-    fontSize: 18,
+    fontSize: 40,
     marginBottom: 30
   },
   btn: {
