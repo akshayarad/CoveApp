@@ -24,21 +24,7 @@ const DashboardLayout = () => {
         }}
       >
 
-
-        <Tabs.Screen name="profile"
-          options={{
-            title: 'Profile', tabBarIcon: ({ focused }) => (
-              <Ionicons
-                size={30}
-                name="person"
-                color={focused ? theme.iconColorFocused :
-                  theme.iconColor}
-              />
-            )
-          }}
-        />
-
-        <Tabs.Screen
+<Tabs.Screen
           name="chat"
           options={{
             title: 'Chat', tabBarIcon: ({ focused }) => (
@@ -51,14 +37,17 @@ const DashboardLayout = () => {
           }}
 
         />
+        
+
+        
 
 
-        <Tabs.Screen name="moodChart"
+        <Tabs.Screen name="moodLog"
           options={{
-            title: 'Mood Chart', tabBarIcon: ({ focused }) => (
+            title: 'Mood Log', tabBarIcon: ({ focused }) => (
               <Ionicons
                 size={30}
-                name="bar-chart-outline"
+                name="create-outline"
                 color={focused ? theme.iconColorFocused :
                   theme.iconColor}
               />)
@@ -66,18 +55,7 @@ const DashboardLayout = () => {
         />
 
 
-        <Tabs.Screen name="yourResources"
-          options={{
-            title: 'Resources', tabBarIcon: ({ focused }) => (
-              <Ionicons
-                size={30}
-                name="heart-outline"
-                color={focused ? theme.iconColorFocused :
-                  theme.iconColor}
-              />
-            )
-          }}
-        />
+        
         <Tabs.Screen
           name="logs/[id]"
           options={{ href: null }}
@@ -93,6 +71,32 @@ const DashboardLayout = () => {
                 color={focused ? theme.iconColorFocused :
                   theme.iconColor}
               />)
+          }}
+        />
+
+<Tabs.Screen name="moodInsights"
+          options={{
+            title: 'Resources', tabBarIcon: ({ focused }) => (
+              <Ionicons
+                size={30}
+                name="bar-chart-outline"
+                color={focused ? theme.iconColorFocused :
+                  theme.iconColor}
+              />
+            )
+          }}
+        />
+
+<Tabs.Screen name="profile"
+          options={{
+            title: 'Profile', tabBarIcon: ({ focused }) => (
+              <Ionicons
+                size={30}
+                name="person"
+                color={focused ? theme.iconColorFocused :
+                  theme.iconColor}
+              />
+            )
           }}
         />
 

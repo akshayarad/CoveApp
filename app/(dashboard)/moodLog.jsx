@@ -56,7 +56,7 @@ const MoodChart = () => {
 
       // Check if parts are numbers
       if (isNaN(month) || isNaN(day) || isNaN(year)) {
-        Alert.alert("Invalid Date", "Please enter a valid date with numbers only")
+        Alert.alert("invalid date", "Please enter a valid date with numbers only")
         return
       }
 
@@ -88,18 +88,18 @@ const MoodChart = () => {
       const scoreInt = parseInt(score, 10)
 
       if (isNaN(scoreInt)) {
-        Alert.alert("Invalid Score", "Score must be a number")
+        Alert.alert("invalid score", "Score must be a number")
         return
       }
 
       if (scoreInt < 1 || scoreInt > 10) {
-        Alert.alert("Invalid Score", "Score must be between 1 and 10")
+        Alert.alert("invalid score", "Score must be between 1 and 10")
         return
       }
 
       // Validate mood
       if (!MOOD_OPTIONS.includes(moods.toLowerCase())) {
-        Alert.alert("Invalid Mood", "Please select a valid mood from the list")
+        Alert.alert("invalid mood", "Please select a valid mood from the list")
         return
       }
 

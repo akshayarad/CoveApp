@@ -22,67 +22,73 @@ const Logs = () => {
   const colorScheme = useColorScheme()
 
   return (
+
+    <ThemedView style={styles.container}>
+
+     
+      <Spacer />
+      <Spacer />
+
+      <ThemedText title={true} style={styles.bigHeading}>
+        Y O U R
+      </ThemedText>
+      <ThemedText title={true} style={styles.midHeading}>
+        L O G S
+      </ThemedText>
+
+      <ThemedText style={styles.title}>
+        Scroll through to take a look at past logs
+      </ThemedText>
+      <ThemedText style={styles.title}>
+        Click on ones you want to see in more detail
+      </ThemedText>
+
+
+
+      <FlatList
+        data={logs}
+        keyExtractor={(item) => item.$id}
+        style={styles.flatList}
+        contentContainerStyle={styles.list}
+        
+        renderItem={({ item }) => (
+          <Pressable onPress={() => router.push(`/logs/${item.$id}`)}>
+            <ThemedCard style={styles.card}>
+              <ThemedText style={[
+                styles.date,
+                { color: colorScheme === 'dark' ? '#274472' : '#FAF3E0' }
+              ]}>
+                {(() => {
+                  // Parse just the date part (YYYY-MM-DD)
+                  const dateStr = item.date.split('T')[0]
+                  const [year, month, day] = dateStr.split('-')
+                  const date = new Date(Date.UTC(year, month - 1, day))
+
+                  return date.toLocaleDateString('en-US', {
+                    month: 'short',
+                    day: 'numeric',
+                    year: 'numeric',
+                    timeZone: 'UTC'
+                  })
+                })()}
+              </ThemedText>
+              <ThemedText style={{ color: colorScheme === 'dark' ? '#274472' : '#FAF3E0' }}>
+                Your mood: {item.moods}
+              </ThemedText>
+            </ThemedCard>
+          </Pressable>
+        )}
+      />
+
   
-      <ThemedView style={styles.container}>
 
-        <Spacer />
-        <Spacer />
-        <Spacer />
-
-        <ThemedText title={true} style={styles.bigHeading}>
-          Y O U R
-        </ThemedText>
-        <ThemedText title={true} style={styles.midHeading}>
-          L O G S
-        </ThemedText>
-
-        <ThemedText style={styles.title}>
-          Scroll through to take a look at past logs
-        </ThemedText>
-        <ThemedText style={styles.title}>
-          Click on ones you want to see in more detail
-        </ThemedText>
+      <Link href="/moodInsights" style={styles.link}>
+        <ThemedText>✨ View your Mood Insights ✨</ThemedText>
+      </Link>
+    </ThemedView>
 
 
 
-        <FlatList
-          data={logs}
-          keyExtractor={(item) => item.$id}
-          contentContainerStyle={styles.list}
-          renderItem={({ item }) => (
-            <Pressable onPress={() => router.push(`/logs/${item.$id}`)}>
-              <ThemedCard style={styles.card}>
-                <ThemedText style={[
-                  styles.date,
-                  { color: colorScheme === 'dark' ? '#274472' : '#FAF3E0' }
-                ]}>
-                  {(() => {
-                    // Parse just the date part (YYYY-MM-DD)
-                    const dateStr = item.date.split('T')[0]
-                    const [year, month, day] = dateStr.split('-')
-                    const date = new Date(Date.UTC(year, month - 1, day))
-
-                    return date.toLocaleDateString('en-US', {
-                      month: 'short',
-                      day: 'numeric',
-                      year: 'numeric',
-                      timeZone: 'UTC'
-                    })
-                  })()}
-                </ThemedText>
-                <ThemedText style={{ color: colorScheme === 'dark' ? '#274472' : '#FAF3E0' }}>
-                  Your mood: {item.moods}
-                </ThemedText>
-              </ThemedCard>
-            </Pressable>
-          )}
-        />
-
-        <Link href="/moodChart" style={styles.link}>
-          <ThemedText> Click to go back to logger </ThemedText>
-        </Link>
-      </ThemedView>
-  
   )
 }
 
@@ -92,8 +98,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center'
-  },
+    paddingTop: 20, 
+    },
   title: {
     fontWeight: 'bold',
     fontSize: 14,
@@ -113,11 +119,13 @@ const styles = StyleSheet.create({
     marginTop: -15
   },
   link: {
-    marginVertical: 80,
     fontSize: 18,
+    marginVertical: 15,
   },
   list: {
-    marginTop: 40
+    marginTop: 20,
+    paddingBottom: 200,
+
   },
   card: {
     width: "95%",
