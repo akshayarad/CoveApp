@@ -31,7 +31,7 @@ const MoodChart = () => {
   const { createLog } = useLogs()
   const router = useRouter()
 
-  const handleMoodSelect = (mood) => {
+  const handleMoodSelect = (mood) => { 
     setMoods(mood)
     setShowMoodModal(false)
   }
@@ -40,27 +40,27 @@ const MoodChart = () => {
     try {
       // Validate required fields first
       if (!date || !moods || !score) {
-        Alert.alert("Missing Fields", "Please fill in all required fields (Date, Mood, and Score)!")
-        return  // Stop here - don't continue
+        Alert.alert("You're missing Fields", "Please fill in all required fields (Date, Mood, and Score)!")
+        return  // stop here don't continue
       }
 
-      // Validate date format
+      // validate date format
       if (!date.includes('/') || date.split('/').length !== 3) {
         Alert.alert("Invalid Date", "Please enter date in MM/DD/YYYY format")
-        return  // Stop here
+        return  // stop here
       }
 
-      // Convert date to ISO format
+      // convert date to ISO format
       let dateISO
-      const [month, day, year] = date.split('/')
+      const [month, day, year] = date.split('/') // slash to sep
 
-      // Check if parts are numbers
+      // check if parts are numbers
       if (isNaN(month) || isNaN(day) || isNaN(year)) {
-        Alert.alert("invalid date", "Please enter a valid date with numbers only")
+        Alert.alert("Invalid date", "please enter a valid date with numbers only")
         return
       }
 
-      // Check date ranges
+      // check date ranges
       if (month < 1 || month > 12) {
         Alert.alert("Invalid Month", "Month must be between 1 and 12")
         return
@@ -146,6 +146,7 @@ const MoodChart = () => {
           <ThemedText title={true} style={styles.midHeading}>
             L O G
           </ThemedText>
+          <ThemedDivider />
 
           <ThemedText title={true} style={styles.subheading}>
             Add a New Log!

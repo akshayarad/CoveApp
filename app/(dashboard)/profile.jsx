@@ -19,6 +19,8 @@ const Profile = () => {
       <ThemedText title={true} style={styles.heading}>
         Hi {user.name}!
       </ThemedText>
+      <ThemedDivider />
+
       
       <Spacer height={20} />
 

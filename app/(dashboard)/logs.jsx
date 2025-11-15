@@ -35,6 +35,8 @@ const Logs = () => {
       <ThemedText title={true} style={styles.midHeading}>
         L O G S
       </ThemedText>
+      <ThemedDivider />
+
 
       <ThemedText style={styles.title}>
         Scroll through to take a look at past logs
