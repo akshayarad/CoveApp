@@ -19,7 +19,7 @@ cd backend
 node server.js
 
 ### Start the Frontend (Expo)
-# Navigate to project root
+Navigate to project root
 cd cove-app
 
 # Start Expo development server
