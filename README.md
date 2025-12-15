@@ -2,7 +2,7 @@
 
 Cove is a React Native mobile application designed to support mental health and emotional wellbeing through AI-powered conversations, mood tracking, and personalized insights!!
 
-## ✨ The Features
+## The Features :)
 
 - Chat Support/Venting: talk to Cove, a compassionate AI therapist/friend/venting buddy powered by Groq's LLM, trained in cognitive behavioral therapy principles
 - Mood Logging: track your daily mood with scores and descriptions
