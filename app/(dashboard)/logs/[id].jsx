@@ -49,6 +49,8 @@ const LogDetails = () => {
     )
   }
   const cardTextColor = colorScheme === 'dark' ? '#274472' : '#FAF3E0'
+  const buttonTextColor = colorScheme === 'dark' ? '#274472' : '#274472'
+
 
   return (
     <ThemedView safe={true} style={styles.container}>
@@ -90,22 +92,21 @@ const LogDetails = () => {
 
 
       <ThemedButton
-        style={styles.delete} onPress={handleDelete}
-      >
-        <ThemedText style={{ color: cardTextColor, textAlign: 'center' }}>
-          Delete Log
-        </ThemedText >
-      </ThemedButton>
+  style={styles.delete} onPress={handleDelete}
+>
+  <ThemedText style={{ color: buttonTextColor, textAlign: 'center' }}>
+    Delete Log
+  </ThemedText>
+</ThemedButton>
 
-      <ThemedButton
-        style={styles.backButton}
-        onPress={() => router.push('/logs')}
-      >
-        <ThemedText style={{ color: cardTextColor }}>
-          ← Back to Logs
-        </ThemedText>
-      </ThemedButton>
-
+<ThemedButton
+  style={styles.backButton}
+  onPress={() => router.push('/logs')}
+>
+  <ThemedText style={{ color: buttonTextColor }}>
+    ← Back to Logs
+  </ThemedText>
+</ThemedButton>
     </ThemedView>
   )
 }
