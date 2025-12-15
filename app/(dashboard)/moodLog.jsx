@@ -13,6 +13,7 @@ import ThemedView from "../../components/ThemedView"
 import ThemedText from "../../components/ThemedText"
 import ThemedTextInput from "../../components/ThemedTextInput"
 import ThemedButton from '../../components/ThemedButton'
+import ThemedDivider from '../../components/ThemedDivider' 
 import Spacer from '../../components/Spacer'
 import ThemedModal from '../../components/ThemedModal'
 

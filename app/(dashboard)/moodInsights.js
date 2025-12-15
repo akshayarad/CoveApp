@@ -8,6 +8,7 @@ import { useLogs } from '../../hooks/useLogs'
 import ThemedView from '../../components/ThemedView'
 import ThemedText from '../../components/ThemedText'
 import ThemedButton from '../../components/ThemedButton'
+import ThemedDivider from '../../components/ThemedDivider' 
 import Spacer from '../../components/Spacer'
 
 const screenWidth = Dimensions.get('window').width
@@ -48,7 +49,7 @@ const MoodInsights = () => {
       return "No mood logs yet 🌱 come onnn, start tracking how you feel!"
     if (avgWeek < 3)
       return ":( You’ve had some tough days 💜 Maybe chat with Cove for a little support?"
-    if (avgWeek < 5)
+    if (avgWeek < 5 && avgWeek > 3)
       return "Some ups and downs, thats toootally okay 🌷 Remember to take care of yourself pookiee!"
     return "You’ve been feeling brighter lately 🌞 Keep checking in with yourself!"
   }, [avgWeek, sortedLogs])
@@ -107,12 +108,14 @@ const MoodInsights = () => {
           <Spacer height={30} />
 
           {avgWeek < 4 && (
-            <ThemedButton
-              onPress={() => router.push('/chat')}
-              style={styles.button}
-            >
-              💬 Talk to Cove
-            </ThemedButton>
+         <ThemedButton
+         onPress={() => router.push('/chat')}
+         style={styles.button}
+       >
+         <ThemedText style={styles.buttonText}>
+           💬 Talk to Cove
+         </ThemedText>
+       </ThemedButton>
           )}
         </>
       ) : (
@@ -169,5 +172,11 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginBottom: 1,
     marginTop: -15
+  },
+  buttonText: {
+    fontSize: 16,
+    fontWeight: '600',
+    color: '#274472',
+    textAlign: 'center',
   },
 })

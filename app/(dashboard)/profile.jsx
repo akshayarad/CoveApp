@@ -6,6 +6,7 @@ import ThemedText from "../../components/ThemedText"
 import ThemedView from "../../components/ThemedView"
 import ThemedButton from '../../components/ThemedButton'
 import ThemedCove from '../../components/ThemedCove'
+import ThemedDivider from '../../components/ThemedDivider' 
 
 const Profile = () => {
   const {logout, user} = useUser()

@@ -10,6 +10,8 @@ import ThemedText from '../../components/ThemedText'
 import ThemedTextInput from '../../components/ThemedTextInput'
 import ThemedButton from '../../components/ThemedButton'
 import ThemedCard from '../../components/ThemedCard'
+import ThemedDivider from '../../components/ThemedDivider'  
+
 import Spacer from '../../components/Spacer'
 import { Colors } from '../../constants/Colors'
 
@@ -55,7 +57,7 @@ const Chat = () => {
         }));
   
       // send to backend instead of directly 
-      const response = await axios.post("http://10.110.84.121:3000/chat", {
+      const response = await axios.post("http://192.168.5.220:3000/chat", {
         messages: [
           { role: "system", content: systemPrompt },
           ...conversationHistory,
