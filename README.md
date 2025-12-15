@@ -15,15 +15,19 @@ Cove is a React Native mobile application designed to support mental health and 
 Cove is built with Expo, which is a React Native framework that simplifies development and deployment.
 
 ### Start the Backend by running
+```bash
 cd backend
 node server.js
+```
 
 ### Start the Frontend (Expo)
-Navigate to project root
+```bash
+# Navigate to project root
 cd cove-app
 
 # Start Expo development server
 npx expo start
+```
 
 ### Choose Your Platform
 - iOS Simulator: Press `i` (Mac only)
