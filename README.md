@@ -10,7 +10,7 @@ Cove is a React Native mobile application designed to support mental health and 
 - User Auth: secure account creation and login with AppWrite
 - Dark/Light Mode: themed interface that adapts to your device preferences
 
-## Running the App
+## Running the App!
 
 Cove is built with Expo, which is a React Native framework that simplifies development and deployment.
 
