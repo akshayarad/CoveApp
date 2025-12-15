@@ -23,7 +23,7 @@ node server.js
 ### Start the Frontend (Expo)
 ```bash
 # Navigate to project root
-cd cove-app
+cd CoveApp
 
 # Start Expo development server
 npx expo start
